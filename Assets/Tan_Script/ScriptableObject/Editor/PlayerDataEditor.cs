@@ -26,13 +26,18 @@ public class PlayerDataEditor : Editor
         base.OnInspectorGUI();
         // Add after
 
-        EditorGUILayout.LabelField("LABELFIELD HERE");
+
+        if (data.Name == string.Empty)
+        {
+            EditorGUILayout.HelpBox("Caution: No name specified", MessageType.Warning);
+        }
 
     }
     void ProgressBar(float value, string label)
     {
-        Rect rect = GUILayoutUtility.GetRect(18, 18, "TextField");
+        Rect rect = GUILayoutUtility.GetRect(20, 25, "TextField");
         EditorGUI.ProgressBar(rect, value, label);
+        EditorGUILayout.Space(10);
     }
 
 
