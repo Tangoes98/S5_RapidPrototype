@@ -7,13 +7,35 @@ using UnityEngine.Rendering;
 [CreateAssetMenu(menuName = "RapidPrototype/PlayerData")]
 public class PlayerData : ScriptableObject
 {
+    public enum PlayerSkills
+    {
+        Acrobatics,
+        AnimalHandling,
+        Arcana,
+        Athletics,
+        Deception,
+        History,
+        Insight,
+        Intimidation,
+        Investigation,
+        Medicine,
+        Nature,
+        Perception,
+        Performance,
+        Persuasion,
+        Religion,
+        SleightOfHand,
+        Stealth,
+        Survival,
+    }
+
     [SerializeField] string _name;
 
-    [Space(10)]
+
     [SerializeField] int _level;
     [SerializeField] float _exp;
 
-    [Space(10)]
+
     [SerializeField][Range(0, 20)] int _strength;
     [SerializeField][Range(0, 20)] int _dexterity;
     [SerializeField][Range(0, 20)] int _constitution;
@@ -21,19 +43,29 @@ public class PlayerData : ScriptableObject
     [SerializeField][Range(0, 20)] int _wisdom;
     [SerializeField][Range(0, 20)] int _charisma;
 
-    [Space(10)]
+
+    [SerializeField] bool _showSkills;
+    [SerializeField] PlayerSkills _skills;
+
+
+
     [SerializeField] int _bonus;
     [SerializeField] int _speed;
 
 
 
-    public string Name { get { return _name; } }
-    public int Level { get { return _level; } }
-    public float Exp { get { return _exp; } }
-    public int Strength { get { return _strength; } }
-    public int Dexterity { get { return _dexterity; } }
-    public int Constitution { get { return _constitution; } }
-    public int Intelligence { get { return _intelligence; } }
-    public int Wisdom { get { return _wisdom; } }
-    public int Charisma { get { return _charisma; } }
+
+    public string Name => _name;
+    public int Level => _level;
+    public float Exp => _exp;
+    public int Strength => _strength;
+    public int Dexterity => _dexterity;
+    public int Constitution => _constitution;
+    public int Intelligence => _intelligence;
+    public int Wisdom => _wisdom;
+    public int Charisma => _charisma;
+
+    public bool ShowSkills => _showSkills;
+    public PlayerSkills Skills => _skills;
 }
+
