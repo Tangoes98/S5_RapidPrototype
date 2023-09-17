@@ -12,3 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77fa2234a791bf141b4788406ca4ee4e, type: 3}
   m_Name: Player1
   m_EditorClassIdentifier: 
+  _name: Charname
+  _level: 0
+  _exp: 0
+  _strength: 4
+  _dexterity: 20
+  _constitution: 8
+  _intelligence: 10
+  _wisdom: 12
+  _charisma: 8
+  _showSkills: 0
+  _skills: 0
+  _bonus: 0
+  _speed: 0

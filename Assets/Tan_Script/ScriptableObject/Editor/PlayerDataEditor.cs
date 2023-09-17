@@ -82,7 +82,17 @@ public class PlayerDataEditor : Editor
         EditorGUILayout.PropertyField(_wisdom);
         EditorGUILayout.PropertyField(_charisma);
 
-        ProgressBar(playerAverageStrength / 120, "AVERAGE STRENGTH");
+        EditorGUILayout.BeginHorizontal();
+        GUILayout.FlexibleSpace();
+
+        ProgressBar(playerAverageStrength / 120, "TOTAL");
+
+
+        if (GUILayout.Button("Random Stats".ToUpper(), GUILayout.Width(150), GUILayout.Height(25))) RandomStats();
+
+        GUILayout.FlexibleSpace();
+        EditorGUILayout.EndHorizontal();
+
         if (playerAverageStrength <= 8 * 6)
             EditorGUILayout.HelpBox("Caution: Strength is too low", MessageType.Warning);
 
@@ -100,13 +110,24 @@ public class PlayerDataEditor : Editor
 
 
 
+
     }
 
     void ProgressBar(float value, string label)
     {
-        Rect rect = GUILayoutUtility.GetRect(20, 25, "TextField");
+        Rect rect = GUILayoutUtility.GetRect(300, 25, "TextField");
         EditorGUI.ProgressBar(rect, value, label);
         EditorGUILayout.Space(10);
+    }
+
+    void RandomStats()
+    {
+        _strength.intValue = Random.Range(2, 20);
+        _dexterity.intValue = Random.Range(2, 20);
+        _constitution.intValue = Random.Range(2, 20);
+        _intelligence.intValue = Random.Range(2, 20);
+        _wisdom.intValue = Random.Range(2, 20);
+        _charisma.intValue = Random.Range(2, 20);
     }
 
 
