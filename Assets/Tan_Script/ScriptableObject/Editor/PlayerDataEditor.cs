@@ -86,6 +86,12 @@ public class PlayerDataEditor : Editor
         EditorGUILayout.PropertyField(_wisdom);
         EditorGUILayout.PropertyField(_charisma);
 
+
+
+
+
+
+
         EditorGUILayout.BeginHorizontal();
         GUILayout.FlexibleSpace();
 
@@ -96,6 +102,12 @@ public class PlayerDataEditor : Editor
 
         GUILayout.FlexibleSpace();
         EditorGUILayout.EndHorizontal();
+
+
+
+
+
+
 
         if (playerAverageStrength <= 8 * 6)
             EditorGUILayout.HelpBox("Caution: Strength is too low", MessageType.Warning);
