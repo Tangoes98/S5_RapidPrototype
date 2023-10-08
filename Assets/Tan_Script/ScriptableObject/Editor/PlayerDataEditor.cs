@@ -20,6 +20,8 @@ public class PlayerDataEditor : Editor
     SerializedProperty _showSkills;
     SerializedProperty _skills;
 
+    SerializedProperty _playerAbilities;
+
     private void OnEnable()
     {
         _name = serializedObject.FindProperty("_name");
@@ -33,6 +35,8 @@ public class PlayerDataEditor : Editor
         _charisma = serializedObject.FindProperty("_charisma");
         _showSkills = serializedObject.FindProperty("_showSkills");
         _skills = serializedObject.FindProperty("_skills");
+
+        _playerAbilities = serializedObject.FindProperty("_playerAbilities");
 
 
     }
@@ -104,6 +108,9 @@ public class PlayerDataEditor : Editor
             EditorGUILayout.PropertyField(_skills);
             EditorGUI.indentLevel--;
         }
+
+
+        EditorGUILayout.PropertyField(_playerAbilities, new GUIContent("Player Abilities"));
 
 
 

@@ -47,6 +47,7 @@ public class PlayerData : ScriptableObject
     [SerializeField] bool _showSkills;
     [SerializeField] PlayerSkills _skills;
 
+    [SerializeField] PlayerAbility[] _playerAbilities;
 
 
     [SerializeField] int _bonus;
@@ -67,5 +68,6 @@ public class PlayerData : ScriptableObject
 
     public bool ShowSkills => _showSkills;
     public PlayerSkills Skills => _skills;
+    public PlayerAbility[] PlayerAbilities => _playerAbilities;
 }
 
