@@ -65,6 +65,7 @@ public class PlayerDataEditor : Editor
         EditorGUILayout.LabelField(_name.stringValue.ToUpper(), EditorStyles.boldLabel);
         EditorGUILayout.LabelField("player data".ToUpper(), EditorStyles.boldLabel);
         EditorGUILayout.PropertyField(_name);
+
         if (_name.stringValue == string.Empty)
             EditorGUILayout.HelpBox("Caution: No name specified", MessageType.Warning);
 
@@ -129,8 +130,24 @@ public class PlayerDataEditor : Editor
 
 
 
+        if (GUILayout.Button("Save Editing".ToUpper(), GUILayout.Width(200), GUILayout.Height(30)))
+        {
+            SaveEditing();
+        }
+
 
     }
+
+    void SaveEditing()
+    {
+        serializedObject.ApplyModifiedProperties();
+    }
+    
+    // void DataSavingCheckBox(bool isSaved)
+    // {
+    //     if (isSaved) return;
+    //     if (!isSaved) EditorGUILayout.HelpBox("Data Saved", MessageType.Info);
+    // }
 
     void ProgressBar(float value, string label)
     {

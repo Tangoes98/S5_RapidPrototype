@@ -44,6 +44,7 @@ public class PlayerData : ScriptableObject
     [SerializeField][Range(0, 20)] int _charisma;
 
 
+
     [SerializeField] bool _showSkills;
     [SerializeField] PlayerSkills _skills;
 

@@ -9,4 +9,5 @@ public class PlayerManager : MonoBehaviour
 
     [Separator(1,20)]
     [SerializeField] string _playerScreenName;
+    
 }

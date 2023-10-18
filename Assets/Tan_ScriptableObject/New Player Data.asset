@@ -10,23 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77fa2234a791bf141b4788406ca4ee4e, type: 3}
-  m_Name: Player1
+  m_Name: New Player Data
   m_EditorClassIdentifier: 
-  _name: CharName
-  _level: 5
+  _name: 
+  _level: 0
   _exp: 0
-  _strength: 14
-  _dexterity: 12
-  _constitution: 10
-  _intelligence: 13
-  _wisdom: 19
-  _charisma: 11
+  _strength: 0
+  _dexterity: 0
+  _constitution: 0
+  _intelligence: 0
+  _wisdom: 0
+  _charisma: 0
   _showSkills: 0
   _skills: 0
-  _playerAbilities:
-  - _playerAttributes: 0
-    _ability: 0
-  - _playerAttributes: 0
-    _ability: 0
+  _playerAbilities: []
   _bonus: 0
   _speed: 0

@@ -8,17 +8,17 @@ public class PlayerSelectWindow : EditorWindow
 
     PlayerAttributes _playerAttributes;
 
-    [MenuItem("Window / _Player Selector")]
+    [MenuItem("Window / _PlayerAttributeSelector")]
     public static void ShowWindow()
     {
-        GetWindow<PlayerSelectWindow>("Player Selector");
+        GetWindow<PlayerSelectWindow>("PlayerAttributeSelector");
     }
 
     private void OnGUI()
     {
         EditorGUILayout.Space(5);
-        GUILayout.Label("Player Selector");
+        GUILayout.Label("PlayerAttributeSelector");
 
-        _playerAttributes = (PlayerAttributes)EditorGUILayout.EnumPopup("Player Selector", _playerAttributes);
+        _playerAttributes = (PlayerAttributes)EditorGUILayout.EnumPopup("PlayerAttributeSelector", _playerAttributes);
     }
 }
