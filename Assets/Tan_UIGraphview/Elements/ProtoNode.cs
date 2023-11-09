@@ -19,14 +19,16 @@ namespace Proto.Elements
         public string Text { get; set; }
         public GraphViewType ProtoType { get; set; }
 
-        public void Initialize()
+        public virtual void Initialize(Vector2 position)
         {
             ProtoName = "ProtoName";
             Choices = new();
             Text = "Proto Content text.";
+
+            SetPosition(new Rect(position, Vector2.zero));
         }
 
-        public void Draw()
+        public virtual void Draw()
         {
             TextField protoNameTextField = new()
             {
@@ -54,14 +56,10 @@ namespace Proto.Elements
             };
             textFoldout.Add(textFoldoutField);
             customDataContainer.Add(textFoldout);
-            
+
             extensionContainer.Add(customDataContainer);
 
         }
-
-
-
-
 
 
     }
