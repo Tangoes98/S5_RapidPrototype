@@ -11,7 +11,7 @@ namespace Proto.Elements
         {
             base.Initialize(position);
 
-            ProtoType = GraphViewType.SingleChoice;
+            ProtoNodeType = GraphViewNodeType.SingleChoice;
 
             Choices.Add("Next Node");
         }

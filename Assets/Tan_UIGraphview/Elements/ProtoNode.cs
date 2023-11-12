@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 
 namespace Proto.Elements
 {
-    public enum GraphViewType
+    public enum GraphViewNodeType
     {
         SingleChoice,
         MultiChoice
@@ -17,7 +17,7 @@ namespace Proto.Elements
         public string ProtoName { get; set; }
         public List<string> Choices { get; set; }
         public string Text { get; set; }
-        public GraphViewType ProtoType { get; set; }
+        public GraphViewNodeType ProtoNodeType { get; set; }
 
         public virtual void Initialize(Vector2 position)
         {
