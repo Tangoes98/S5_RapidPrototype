@@ -50,9 +50,32 @@ namespace Proto.Windows
             this.AddManipulator(new SelectionDragger());
             this.AddManipulator(new RectangleSelector());
 
-
+            this.AddManipulator(CreateNodeGroupContextualMenu());
 
         }
+
+        private IManipulator CreateNodeGroupContextualMenu()
+        {
+            ContextualMenuManipulator contextualMenuManipulator = new ContextualMenuManipulator(
+
+                menuEvent => menuEvent.menu.AppendAction("Add Group", actionEvent => AddElement(CreateGroup("ProtoGroup", actionEvent.eventInfo.localMousePosition)))
+            );
+
+            return contextualMenuManipulator;
+        }
+
+        private Group CreateGroup(string title, Vector2 localMousePosition)
+        {
+            Group group = new()
+            {
+                title = title
+            };
+
+            group.SetPosition(new Rect(localMousePosition, Vector2.zero));
+            return group;
+        }
+
+
 
         IManipulator CreateNodeContextualMenu(string actionTitle, GraphViewNodeType nodeType)
         {
@@ -63,6 +86,8 @@ namespace Proto.Windows
 
             return contextualMenuManipulator;
         }
+
+
 
 
 
